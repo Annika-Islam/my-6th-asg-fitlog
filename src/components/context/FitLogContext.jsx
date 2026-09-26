@@ -7,7 +7,7 @@ export function FitLogProvider({ children }) {
   const [plan, setPlan] = useState([]);
   const [saved, setSaved] = useState([]);
 
-  // localStorage থেকে ডেটা লোড করা (রিলোডে হারাবে না)
+  
   useEffect(() => {
     const p = localStorage.getItem("fitlog_plan");
     const s = localStorage.getItem("fitlog_saved");
@@ -15,7 +15,7 @@ export function FitLogProvider({ children }) {
     if (s) setSaved(JSON.parse(s));
   }, []);
 
-  // localStorage-এ ডেটা সেভ করা
+ 
   useEffect(() => {
     localStorage.setItem("fitlog_plan", JSON.stringify(plan));
   }, [plan]);
